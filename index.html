@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A1K9</title>
+</head>
+<body>
+	<div class="login-div">
+		<div class="user-div">
+			<input id="user" type="text" name="username" placeholder="Username">
+		</div>
+		<div class="pass-div">
+			<input id="pass" type="password" name="password" placeholder="Password">
+		</div>
+
+		<button class="btn-checking" onclick="CheckLogin()">Login</button>
+	</div>
+
+	<script type="text/javascript">
+		window.onload()
+
+		data = [{
+			user: "admin",
+			pass: "admin"
+		}]
+
+		const CheckLogin = () => {
+			var user = document.getElementById("user");
+			var password = document.getElementById("pass");
+
+			for (var i = 0; i < data.length; i++) {
+				if (user.value == data[i]["user"] && password.value == data[i]["pass"]) {
+					alert("Successful Login");
+				}
+			}
+		}
+
+	</script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: black;
+		}
+
+		.login-div {
+			border: 1px solid black;
+			border-radius: 25px;
+			width: 25vw;
+			height: 50vh;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, 50%);
+			padding: 15px;
+			background-color: grey;
+			border: 3px solid cyan;
+		}
+
+		.user-div, .pass-div {
+			position: relative;
+			left: 5vw;
+			margin: 3vh 0 3vh 0;
+		}
+
+		.btn-checking {
+			width: 10vw;
+			position: relative;
+			left: 10.3vw;
+		}
+
+		#user, #pass {
+			padding: 5px;
+			width: 15vw;
+			background: none;
+			border: none;
+			border-bottom: 2px solid cyan;
+		}
+
+		#user::placeholder, #pass::placeholder {
+			opacity: .6;
+			color: black;
+		}
+	</style>
+</body>
+</html>
